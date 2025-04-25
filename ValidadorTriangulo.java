@@ -12,17 +12,25 @@ public class ValidadorTriangulo {
         System.out.println("\n\t\t\t -- Validador de Triângulo --\n");
 
         // Entradas
-        System.out.println("Informe o lado a: ");
+        System.out.print("Informe o lado a: ");
         a = entrada.nextInt();
         System.out.print("Informe o lado b: ");
         b = entrada.nextInt();
-        System.out.println("Informe o lado c: ");
+        System.out.print("Informe o lado c: ");
         c = entrada.nextInt();
 
         // Processamento
         if ((a < (b + c)) && (b < (a + c)) && (c < (a + b))) {
             // É triângulo
             System.out.printf("\n%d, %d e %d formam triângulo!\n", a, b, c);
+
+            if((a == b) && (b == c)){
+                System.out.println("Triângulo Equilátero!");
+            }else if((a == b) || (b == c) || (a == c)){
+                System.out.println("Triângulo Isóceles!");
+            }else {
+                System.out.println("Triangulo Escaleno!");
+            }
         } else {
             // Não é triângulo
             System.out.printf("\n%d, %d e %d NÃO formam triângulo!\n", a, b, c);
